@@ -11,6 +11,8 @@ type Config struct {
 	AudioFilesPath string
 	MQTT           *ConfigMQTT
 	Go2rtcURL      *url.URL
+	Go2rtcUsername string
+	Go2rtcPassword string
 }
 
 type ConfigMQTT struct {
@@ -57,7 +59,9 @@ func GetConfig() *Config {
 			Username:   viper.GetString("MQTT_USERNAME"),
 			Password:   viper.GetString("MQTT_PASSWORD"),
 		},
-		Go2rtcURL: go2rtcUrl,
+		Go2rtcURL:      go2rtcUrl,
+		Go2rtcUsername: viper.GetString("GO2RTC_USERNAME"),
+		Go2rtcPassword: viper.GetString("GO2RTC_PASSWORD"),
 	}
 	return &config
 }

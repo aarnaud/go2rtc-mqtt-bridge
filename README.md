@@ -17,6 +17,8 @@ MQTT_CLIENT_ID: "go2rtc"
 MQTT_BASE_TOPIC: "go2rtc"
 MQTT_USERNAME: "go2rtc"
 MQTT_PASSWORD: "CHANGEME"
+GO2RTC_USERNAME: "admin"    # optional
+GO2RTC_PASSWORD: "CHANGEME" # optional
 ```
 
 

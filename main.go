@@ -47,6 +47,9 @@ func main() {
 			Timeout: time.Second * 30,
 		}
 		req, err := http.NewRequest(http.MethodPost, go2rtcUrl.String(), nil)
+		if config.Go2rtcUsername != "" && config.Go2rtcPassword != "" {
+			req.SetBasicAuth(config.Go2rtcUsername, config.Go2rtcPassword)
+		}
 		req.URL.RawQuery = queryValues.Encode()
 		response, err := httpCli.Do(req)
 		if err != nil {
